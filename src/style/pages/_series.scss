@@ -1,0 +1,74 @@
+.tv {
+  .img-background {
+    width: 100%;
+    height: 80vh;
+    background: url(../../../public/img/onepiece.jpeg);
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(20, 20, 20, 1) 80%
+      );
+      position: absolute;
+      bottom: 0;
+    }
+
+    h1 {
+      width: 40%;
+      margin-left: 50px;
+      color: whitesmoke;
+      font-family: Helvetica, sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px #141414;
+    }
+
+    h3 {
+      margin-left: 50px;
+      width: 40%;
+      font-family: Helvetica, sans-serif;
+      text-shadow: 1px 1px 2px #141414;
+      color: rgb(229, 229, 229);
+      font-weight: 500;
+      background-color: #8c8c8c48;
+      padding: 6px;
+      border-radius: 10px;
+    }
+  }
+
+  .arrow-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .first-page,
+    .last-page {
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .fa-solid {
+      color: rgb(220, 219, 219);
+      font-size: 5rem;
+      margin: 10px 20px;
+      cursor: pointer;
+    }
+
+    p {
+      color: whitesmoke;
+      font-size: 2rem;
+      font-family: Helvetica, sans-serif;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.nav-bar {
+  z-index: 1001;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: start;
+  align-items: center;
+  transition: 0.3s;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8085828081232493) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  .logo {
+    width: 180px;
+    margin: 15px 25px 15px 40px;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin-left: 15px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+
+    li {
+      color: white;
+      transition: 0.2s;
+
+      &:hover {
+        color: grey;
+      }
+    }
+  }
+
+  .right-nav {
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 35px;
+
+    .display-none {
+      display: flex;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      background-color: none;
+      border: none;
+      padding: 3px;
+      width: max-content;
+      border-radius: 5px;
+      .loupe {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .input-search {
+        display: block;
+        height: 100%;
+        border: none;
+        background: black;
+        color: white;
+        width: 0px;
+        outline: none;
+        transition: 0.3s;
+
+        &:active {
+          border: black;
+        }
+      }
+    }
+
+    .mainmenubtn {
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: large;
+    }
+    .arrow-down {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-child {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.555);
+      min-width: 200px;
+      position: absolute;
+      right: 0;
+      height: 300px;
+    }
+    .dropdown-child p {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+      transition: 0.2s;
+      cursor: pointer;
+      font-family: Helvetica;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .dropdown:hover .dropdown-child {
+      display: block;
+    }
+
+    .profil {
+      display: flex;
+      margin: 0 10px;
+      align-items: center;
+
+      .img-profil {
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
