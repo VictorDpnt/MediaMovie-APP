@@ -1,4 +1,8 @@
+import { useState } from "react";
+import RecommandationMovie from "./RecommandationMovie";
+
 const Cards = ({ movie }) => {
+  const [showMoreInfos, setShowMoreInfos] = useState(false);
   const dateFormateur = (date) => {
     let [yy, mm, dd] = date.split("-");
     return [dd, mm, yy].join(" / ");
@@ -91,7 +95,18 @@ const Cards = ({ movie }) => {
             {movie.title ? movie.title : movie.name}
           </p>
         </div>
-        <div className="back">
+        <div className="back" onMouseLeave={() => setShowMoreInfos(false)}>
+          <div className="bg-back">
+            <img
+              src={
+                movie.backdrop_path
+                  ? "https://image.tmdb.org/t/p/original" + movie.backdrop_path
+                  : "./img/poster.jpg"
+              }
+              alt={movie.poster_path}
+              className="img-movie"
+            />
+          </div>
           <h1 className="title">{movie.title ? movie.title : movie.name}</h1>
           {movie.release_date ? (
             <p className="date">
@@ -125,6 +140,10 @@ const Cards = ({ movie }) => {
               <p>Pas de synopsis disponible pour le moment ...</p>
             )}
           </div>
+
+          <h5 onClick={() => setShowMoreInfos(true)}>Titres similaires ...</h5>
+
+          {showMoreInfos && <RecommandationMovie movieId={movie.id} />}
         </div>
       </div>
     </div>

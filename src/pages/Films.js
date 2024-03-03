@@ -28,7 +28,7 @@ const Films = () => {
   }
   useEffect(() => {
     axios.get(axio).then((res) => setData(res.data.results));
-  }, [inputValue, count]);
+  }, [inputValue, count, axio]);
 
   function increment() {
     setCount(function (prevCount) {

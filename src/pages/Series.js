@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
-import Cards from "../components/Cards";
+import CardsSerie from "../components/CardsSerie";
 
 const Series = () => {
   const [inputValue, setInputValue] = useState("");
@@ -28,7 +28,7 @@ const Series = () => {
   }
   useEffect(() => {
     axios.get(axio).then((res) => setData(res.data.results));
-  }, [inputValue, count]);
+  }, [inputValue, count, axio]);
 
   function increment() {
     setCount(function (prevCount) {
@@ -61,7 +61,7 @@ const Series = () => {
       <div className="card-container">
         <ul className="cards-items">
           {data.map((movie) => (
-            <Cards key={movie.id} movie={movie} />
+            <CardsSerie key={movie.id} movie={movie} />
           ))}
         </ul>
       </div>
