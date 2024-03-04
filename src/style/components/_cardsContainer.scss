@@ -20,8 +20,21 @@
       scale: 1;
     }
   }
+
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (max-width: 770px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    margin-top: -230px;
+  }
 }
 .container {
+  // max-width: 220px;
+  // max-height: 180px;
   width: 300px;
   height: 220px;
   perspective: 800px;
@@ -31,6 +44,10 @@
   &:hover {
     scale: 1.2;
     z-index: 1000;
+  }
+  @media screen and (max-width: 320px) {
+    width: 230px;
+    height: 150px;
   }
 }
 
@@ -117,7 +134,26 @@
   box-shadow: 0 0px 10px 2px #141414;
   height: auto;
 
-  // overflow-y: scroll;
+  @media screen and (max-width: 320px) {
+    width: 220px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 280px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 425px) {
+    width: 280px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 280px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 280px;
+    padding: 5px;
+  }
 
   .bg-back {
     position: absolute;
@@ -136,6 +172,10 @@
     color: rgb(234, 233, 233);
     font-size: 1rem;
     text-transform: uppercase;
+
+    @media screen and (max-width: 400px) {
+      font-size: 0.7rem;
+    }
   }
 
   .date,

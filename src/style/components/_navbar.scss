@@ -1,9 +1,10 @@
 .nav-bar {
+  padding: 5px;
   z-index: 1001;
   width: 100%;
   display: flex;
   position: fixed;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   transition: 0.3s;
   background: linear-gradient(
@@ -12,9 +13,69 @@
     rgba(255, 255, 255, 0) 100%
   );
 
+  @media screen and (max-width: 1010px) {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .burger-container {
+    margin: 0px 0 0 40px;
+    height: fit-content;
+    opacity: 0;
+
+    @media screen and (max-width: 1010px) {
+      opacity: 1;
+    }
+
+    img {
+      width: 30px;
+    }
+
+    .sous-menuburger {
+      z-index: -1;
+      position: absolute;
+      background-color: black;
+      height: 100vh;
+      left: -40vw;
+      top: 0;
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+
+      &.active-burger {
+        left: 0;
+      }
+      .sous-menuburgerr {
+        color: white;
+        letter-spacing: 1px;
+        font-size: larger;
+        margin-top: 20px;
+
+        @media screen and (max-width: 425px) {
+          font-size: medium;
+        }
+        @media screen and (max-width: 425px) {
+          font-size: small;
+        }
+      }
+    }
+  }
+
   .logo {
     width: 180px;
     margin: 15px 25px 15px 40px;
+
+    @media screen and (max-width: 550px) {
+      width: 130px;
+    }
+    @media screen and (max-width: 1010px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-80%);
+    }
   }
 
   .navigation {
@@ -32,6 +93,9 @@
       &:hover {
         color: grey;
       }
+    }
+    @media screen and (max-width: 1010px) {
+      display: none;
     }
   }
 
@@ -60,6 +124,24 @@
       .loupe {
         margin-right: 10px;
         cursor: pointer;
+        display: block;
+
+        &.no-active {
+          display: none;
+        }
+
+        @media screen and (max-width: 320px) {
+          position: absolute;
+          right: -35px;
+        }
+        @media screen and (max-width: 375px) {
+          position: absolute;
+          right: -35px;
+        }
+        @media screen and (max-width: 425px) {
+          position: absolute;
+          right: -10px;
+        }
       }
 
       .input-search {
@@ -68,9 +150,38 @@
         border: none;
         background: black;
         color: white;
-        width: 0px;
+        width: 0;
         outline: none;
         transition: 0.3s;
+        border-radius: 5px;
+        padding: 0 10px;
+        border: 1px solid white;
+        opacity: 0;
+
+        &.activeInput {
+          width: 200px;
+          height: 20px;
+          opacity: 0.6;
+
+          @media screen and (max-width: 320px) {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 2px;
+          }
+          @media screen and (max-width: 375px) {
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            right: 7px;
+          }
+          @media screen and (max-width: 425px) {
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            right: 2px;
+          }
+        }
 
         &:active {
           border: black;
@@ -84,10 +195,16 @@
       cursor: pointer;
       padding: 10px;
       font-size: large;
+      @media screen and (max-width: 1010px) {
+        display: none;
+      }
     }
     .arrow-down {
       color: white;
       transition: 0.3s;
+      @media screen and (max-width: 1010px) {
+        display: none;
+      }
     }
 
     .dropdown {

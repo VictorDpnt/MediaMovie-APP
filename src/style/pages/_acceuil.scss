@@ -31,6 +31,22 @@
       font-size: 2.5rem;
       letter-spacing: 1px;
       text-shadow: 1px 1px 2px #141414;
+      @media screen and (max-width: 770px) {
+        font-size: 1.6rem;
+      }
+      @media screen and (max-width: 425px) {
+        font-size: 1.2rem;
+        width: 60%;
+        position: absolute;
+        top: 20%;
+      }
+      @media screen and (max-width: 375px) {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      @media screen and (max-width: 320px) {
+        display: none;
+      }
     }
 
     h3 {
@@ -43,6 +59,9 @@
       background-color: #8c8c8c48;
       padding: 6px;
       border-radius: 10px;
+      @media screen and (max-width: 425px) {
+        display: none;
+      }
     }
   }
 
@@ -54,20 +73,21 @@
 
     .first-page,
     .last-page {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       cursor: pointer;
     }
 
-    .fa-solid {
+    .fa-chevron-left,
+    .fa-chevron-right {
       color: rgb(220, 219, 219);
-      font-size: 5rem;
+      font-size: 1rem;
       margin: 10px 20px;
       cursor: pointer;
     }
 
     p {
       color: whitesmoke;
-      font-size: 2rem;
+      font-size: 1rem;
       font-family: Helvetica, sans-serif;
     }
   }

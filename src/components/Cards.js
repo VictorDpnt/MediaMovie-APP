@@ -95,7 +95,15 @@ const Cards = ({ movie }) => {
             {movie.title ? movie.title : movie.name}
           </p>
         </div>
-        <div className="back" onMouseLeave={() => setShowMoreInfos(false)}>
+        <div
+          className="back"
+          onClick={() => {
+            setShowMoreInfos(!showMoreInfos);
+          }}
+          onMouseLeave={() => {
+            setShowMoreInfos(false);
+          }}
+        >
           <div className="bg-back">
             <img
               src={
@@ -141,7 +149,9 @@ const Cards = ({ movie }) => {
             )}
           </div>
 
-          <h5 onClick={() => setShowMoreInfos(true)}>Titres similaires ...</h5>
+          <h5 onClick={() => setShowMoreInfos(!showMoreInfos)}>
+            Titres similaires ...
+          </h5>
 
           {showMoreInfos && <RecommandationMovie movieId={movie.id} />}
         </div>

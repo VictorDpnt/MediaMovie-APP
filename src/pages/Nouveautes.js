@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import Cards from "../components/Cards";
-import NavBarNew from "../components/NavBarNew";
+import NavBar from "../components/NavBar";
 
 const Nouveautes = () => {
   const [count, setCount] = useState(1);
@@ -35,7 +35,7 @@ const Nouveautes = () => {
   }
   return (
     <div className="now-playing">
-      <NavBarNew />
+      <NavBar />
       <div className="img-background" id="img-bg">
         <h1>DUNE - DEUXIÈME PARTIE</h1>
         <h3>

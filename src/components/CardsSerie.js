@@ -95,7 +95,15 @@ const Cards = ({ movie }) => {
             {movie.title ? movie.title : movie.name}
           </p>
         </div>
-        <div className="back" onMouseLeave={() => setShowMoreInfos(false)}>
+        <div
+          className="back"
+          onClick={() => {
+            setShowMoreInfos(!showMoreInfos);
+          }}
+          onMouseLeave={() => {
+            setShowMoreInfos(false);
+          }}
+        >
           <div className="bg-back">
             <img
               src={
